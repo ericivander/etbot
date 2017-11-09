@@ -1,6 +1,6 @@
 defmodule Etbot.Model do
   # https://core.telegram.org/bots/api#available-types
-  # Optional fields are ommited
+  # Optional fields are omitted
 
   ###################
   # Available Types #

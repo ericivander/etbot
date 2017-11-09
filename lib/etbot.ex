@@ -1,22 +1,7 @@
 defmodule Etbot do
-  use Application
 
-  @port Application.get_env(:etbot, :port)
   @token Application.get_env(:etbot, :token)
-  @url Application.get_env(:etbot, :url)
-
-  def start(_type, _args) do
-    import Supervisor.Spec
-
-    children = [worker(__MODULE__, [], function: :run)]
-
-    opts = [strategy: :one_for_one, name: Etbot.Supervisor]
-    Supervisor.start_link(children, opts)
-  end
-
-  def run do
-    {:ok, _} = Plug.Adapters.Cowboy.http Etbot.Router, [], port: @port
-  end
+  @url to_string("https://api.telegram.org/bot#{@token}/")
 
   ###################
   # Getting Updates #
