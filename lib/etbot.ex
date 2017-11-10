@@ -19,7 +19,7 @@ defmodule Etbot do
   # Ports currently supported for Webhooks: 443, 80, 88, 8443
   def setWebhook(url \\ "") do
     query = %{url: url}
-    HTTPotion.get!(@url <> "setWebhook", query) |> response()
+    HTTPotion.get!(@url <> "setWebhook", query: query) |> response()
   end
 
   def deleteWebhook() do
