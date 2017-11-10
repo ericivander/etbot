@@ -18,6 +18,8 @@ Then get dependencies
 $ mix deps.get
 ```
 
+Add `:etbot` to your `:applications` list to start `:httpotion` and `:poison` automatically.
+
 ## Configuration
 
 Add your Telegram Bot API token to `config/config.exs`
